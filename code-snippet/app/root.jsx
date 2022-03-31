@@ -7,12 +7,24 @@ import {
   ScrollRestoration,
 } from "remix";
 
+import styles from "~/styles/global.css"; 
+
+
 export function meta() {
   return {
     charset: "utf-8",
     title: "New Remix App",
     viewport: "width=device-width,initial-scale=1",
   };
+}
+
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: styles,
+    },
+  ];
 }
 
 export default function App() {
