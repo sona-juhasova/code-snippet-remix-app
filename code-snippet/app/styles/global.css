@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap');
+@import "path/to/font-awesome/less/font-awesome.less";
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0; 
-    color:  #424242;
+    color:  #ededed; 
+    font-weight: 300;
+    
+
 }
 
 main {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 50px);
 
 }
 
@@ -17,6 +22,8 @@ main {
     flex-direction: row;
     height: 100%;
     width: 100%;
+    padding-top: 50px;
+    background-color: #212121;
 
 }
 
@@ -25,17 +32,57 @@ main {
 #header {
     height: 50px;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: 3px 3px 3px #000; 
+    z-index: 20;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: #212121; 
 }
+
+#header h1{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+#header button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+
+    box-shadow: 1px 1px 3px #000; 
+    background-color: #fff;
+    margin-right: 20px;
+    border-radius: 5px;
+    color: #212121;
+
+
+
+}
+
+#header button:hover {
+
+    box-shadow: 1px 1px 5px #000; 
+    cursor: pointer; 
+
+}
+
+
 
 /* category ------------------------------------------ */
 #category-section {
-    width: 15%;
+    width: 12%;
     display: flex;
-    flex-direction: column;
-    border-right: 1px solid #fff;
+    flex-direction: column; 
     height: 100%;
     overflow: scroll;
-    background-color: #d7ded7;
+    background-color: #212121; 
+
 
     justify-content: center;
     align-items: center;
@@ -56,20 +103,27 @@ main {
 }
 
 #category-section div h3 {
-    font-size: 16px;
+    font-size: 18px;
+    color: #d4d4d4;
+}
+
+#category-section div h3:hover { 
+    cursor: pointer; 
+    text-shadow: 5px 5px 5px #000;
+    color: #fff;
 
 }
 
 /* overview ------------------------------------------ */
 
 #overview-section {
-    width: 25%;
+    width: 20%;
     display: flex;
-    flex-direction: column;
-    border-right: 1px solid #d7ded7;
+    flex-direction: column; 
     height: 100%;
     overflow: scroll;
-    background-color: #ecf5e9;
+    background-color: #2e2d2d;
+    box-shadow: inset 3px 3px 15px #000;
 }
 
 #overview-section div {
@@ -77,17 +131,23 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    border-bottom: 1px solid #fff; 
+    width: 100%; 
     padding: 20px 10px;
+    
 
+
+}
+
+#overview-section div:hover { 
+    box-shadow: inset 1px 1px 5px #000;
+    cursor: pointer; 
 
 }
 
 #overview-section div h4 { 
     font-size: 16px;
     width: 90%;
-    text-align: left;
+    text-align: left;  
 
 
 }
@@ -96,15 +156,16 @@ main {
 /* content ------------------------------------------ */
 
 #content-section {
-    width: 60%;
+    width: 68%;
     display: flex;
     flex-direction: column;
     border-right: 1px solid #bababa;
     height: 100%;
     overflow: scroll; 
+    background-color: #212121;   
 }
 
-#content-section div {
+#content-section .content-wrapper {
     display: flex;
     flex-direction: column;
     margin: 50px;
@@ -112,13 +173,76 @@ main {
 
 }
 
-#content-section div h1 {
+#content-section .content-wrapper h1 {
+    margin-bottom: 20px;
+}
+
+#content-section .content-wrapper p{
     margin-bottom: 50px;
-}
-
-#content-section div p{
-    margin-bottom: 30px;
+    font-weight: 100;
 }
 
 
 
+#content-section .code-wrapper {
+    padding: 20px; 
+    border-radius: 10px; 
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 100%;
+
+    box-shadow: inset 1px 1px 5px 3px #141414;
+
+}
+
+#content-section .code-wrapper .button-wrapper {
+margin-left: auto;
+    width: 5%;
+    height: 100%; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: start;
+}
+
+#content-section .code-wrapper .button-wrapper button {  
+    background: none;
+    border: none;
+    outline: none;  
+    
+
+
+}
+#content-section .code-wrapper .button-wrapper button:hover {
+    cursor: pointer; 
+    
+
+} 
+
+.buttons-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.buttons-wrapper button{
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+
+    box-shadow: 1px 1px 3px #000; 
+    background-color: #fff; 
+    border-radius: 5px;
+    color: #212121;
+
+
+
+}
+
+.buttons-wrapper button:hover {
+
+    box-shadow: 1px 1px 5px #000; 
+    cursor: pointer; 
+
+}
