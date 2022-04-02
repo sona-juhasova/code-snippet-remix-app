@@ -6,8 +6,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from "remix";
-
-import styles from "~/styles/global.css"; 
+ 
+import styles from "~/styles/global.css";
 
 
 export function meta() {
@@ -35,7 +35,17 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <main>
+          <div id='header'>
+            <h1>Code Snippet App</h1>
+            <button>Create New</button>
+
+          </div>
+
+              <Outlet />
+
+        </main>
+
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
