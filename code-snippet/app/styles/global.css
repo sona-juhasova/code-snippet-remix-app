@@ -124,7 +124,7 @@ main {
     box-shadow: inset 3px 3px 15px #000;
 }
 
-#overview-section div {
+#overview-section .list-item {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -136,17 +136,54 @@ main {
 
 }
 
-.active-list-item {
-    box-shadow: inset 1px 1px 5px #000; 
+
+#overview-section .search-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    padding: 20px 10px;
+    
+
+
 }
 
-#overview-section div:hover { 
+
+#overview-section .search-wrapper input {
+    width: 90%;
+    height: 90%;
+
+    box-shadow: inset 1px 1px 5px #000;
+    border: none;
+    background-color: #383737;
+    padding: 10px;
+    border-radius: 10px;
+
+
+}
+
+#overview-section .search-wrapper button {
+    background-color: transparent;
+    width: 20%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#overview-section .search-wrapper button:hover {
+    cursor: pointer;  
+}
+ 
+#overview-section .list-item:hover { 
     box-shadow: inset 1px 1px 5px #000;
     cursor: pointer; 
 
 }
 
-#overview-section div link { 
+#overview-section .list-item link { 
     font-size: 16px;
     width: 90%;
     text-align: left;  
