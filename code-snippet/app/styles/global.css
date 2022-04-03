@@ -64,7 +64,7 @@ main {
 
 
 }
-
+ 
 #header button:hover {
 
     box-shadow: 1px 1px 5px #000; 
@@ -81,9 +81,7 @@ main {
     flex-direction: column; 
     height: 100%;
     overflow: scroll;
-    background-color: #212121; 
-
-
+    background-color: #212121;   
     justify-content: center;
     align-items: center;
 
@@ -138,16 +136,21 @@ main {
 
 }
 
+.active-list-item {
+    box-shadow: inset 1px 1px 5px #000; 
+}
+
 #overview-section div:hover { 
     box-shadow: inset 1px 1px 5px #000;
     cursor: pointer; 
 
 }
 
-#overview-section div h4 { 
+#overview-section div link { 
     font-size: 16px;
     width: 90%;
     text-align: left;  
+    text-decoration: none;
 
 
 }
@@ -191,14 +194,13 @@ main {
     flex-direction: row;
     width: 95%;
     height: 100%;
-    background-color: #272727;
-
+    background-color: #272727; 
     box-shadow: inset 1px 1px 5px 3px #141414;
 
 }
 
 #content-section .code-wrapper .button-wrapper {
-margin-left: auto;
+    margin-left: auto;
     width: 5%;
     height: 100%; 
     display: flex;
@@ -242,6 +244,115 @@ margin-left: auto;
 }
 
 .buttons-wrapper button:hover {
+
+    box-shadow: 1px 1px 5px #000; 
+    cursor: pointer; 
+
+}
+
+
+
+/* add new ------------------------------------------ */
+
+
+#add-new-section {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #bababa;
+    height: 100%;
+    overflow: scroll; 
+    background-color: #212121;   
+}
+
+#add-new-section form { 
+}
+
+#add-new-section .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+
+
+}
+
+#add-new-section .content-wrapper h1 {
+    margin-bottom: 50px;
+}
+
+#add-new-section form input,
+#add-new-section form textarea,
+#add-new-section form select {
+    padding: 20px; 
+    border-radius: 10px; 
+    display: flex;
+    flex-direction: row;
+    width: 95%; 
+    background-color: #272727; 
+    box-shadow: inset 1px 1px 5px 3px #141414;
+    border: none;
+    outline: none;
+}
+
+#add-new-section form select {
+    width: 30%; 
+
+    background-image:
+      linear-gradient(45deg, transparent 50%, gray 50%),
+      linear-gradient(135deg, gray 50%, transparent 50%),
+      linear-gradient(to right, #ccc, #ccc);
+    background-position:
+      calc(100% - 20px) calc(1em + 10px),
+      calc(100% - 15px) calc(1em + 10px),
+      calc(100% - 2.5em) 5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  #add-new-section form select:focus {
+    background-image:
+      linear-gradient(45deg, white 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, white 50%),
+      linear-gradient(to right, #ccc, #ccc);
+    background-position:
+      calc(100% - 15px) 1.5em,
+      calc(100% - 20px) 1.5em,
+      calc(100% - 2.5em) 5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: white;
+    outline: 0;
+  }
+  
+
+#add-new-section button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+
+    box-shadow: 1px 1px 3px #000; 
+    background-color: #fff;
+    margin-right: 20px;
+    border-radius: 5px;
+    color: #212121;
+
+
+
+}
+
+#add-new-section button:hover {
 
     box-shadow: 1px 1px 5px #000; 
     cursor: pointer; 

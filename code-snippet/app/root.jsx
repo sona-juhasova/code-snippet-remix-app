@@ -1,4 +1,5 @@
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -6,7 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "remix";
- 
+
 import styles from "~/styles/global.css";
 
 
@@ -38,11 +39,14 @@ export default function App() {
         <main>
           <div id='header'>
             <h1>Code Snippet App</h1>
-            <button>Create New</button>
+
+            <Link to="./components/AddNew">
+              <button>Create New</button>
+            </Link>
 
           </div>
 
-              <Outlet />
+          <Outlet />
 
         </main>
 
