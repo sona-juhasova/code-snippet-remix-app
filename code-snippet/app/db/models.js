@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 
 const snippetsSchema = new Schema({
   title: String,
+  date:Date,
   description: String,
   code_snippet: String,
   language: String,

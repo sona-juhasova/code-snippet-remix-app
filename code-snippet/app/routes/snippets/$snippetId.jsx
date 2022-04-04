@@ -4,56 +4,17 @@ import connectDb from '~/db/connectDb.server';
 export async function loader({ params }) {
 
     const db = await connectDb();
-    const snippets = await db.models.CodeSnippet.findById(params.snippetId);
+    const snippet = await db.models.CodeSnippet.findById(params.snippetId);
 
-    return snippets;
+    return snippet;
 
 }
 
 export default function Index() {
- 
+
     const snippet = useLoaderData();
+
     return (
-
-        <div id='window-wrapper'>
-
-            {/* category section-------------------------------------------------------------- */}
-            <div id='category-section'>
-                <div>
-                    <h3>All</h3>
-                </div>
-                <div>
-                    <h3>Favourites</h3>
-                </div>
-                <div>
-                    <h3>HTML</h3>
-                </div>
-                <div>
-                    <h3>CSS</h3>
-                </div>
-                <div>
-                    <h3>JavaScript</h3>
-                </div>
-
-            </div>
-
-
-
-            {/* list of titles ------------------------------------------------------------- */}
-
-            <div id='overview-section'>
-                {/* {snippets.map((snippet) => {
-                    return (
-                        <div key={snippet._id} className="list-item">
-
-                            <Link to={"snippets/" + snippet._id}>{snippet.title}</Link>
-                        </div>
-                    );
-                })} */}
-
-            </div>
-
-            {/* code - snippet content -------------------------------------------------------------- */}
 
 
             <div id='content-section'>
@@ -95,6 +56,6 @@ export default function Index() {
                     </div>
                 </div>
             </div>
-        </div>);
+    );
 
 }
