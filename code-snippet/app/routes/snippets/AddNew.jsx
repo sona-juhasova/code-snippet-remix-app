@@ -35,7 +35,8 @@ export default function AddNewSnippet() {
 
 
     return (
-                <div className='content-wrapper' id="add-new-section">
+                <div id="add-new-section">
+                      <div className='content-wrapper'> 
                     <h1>Create new</h1>
 
 
@@ -54,7 +55,7 @@ export default function AddNewSnippet() {
 
                     </form>
 
-
+                    </div>
                 </div>
     );
 

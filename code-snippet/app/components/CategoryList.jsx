@@ -5,10 +5,7 @@ export default function CategoryList(props)
         <div id='category-section'>
         <div>
           <h3><Link to="?category=">All</Link></h3>
-        </div>
-        <div>
-          <h3><Link to="?fav=fav">Favourites</Link></h3>
-        </div>
+        </div> 
         <div>
           <h3><Link to="?category=HTML">HTML</Link></h3>
         </div>

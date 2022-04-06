@@ -29,18 +29,59 @@ export function links() {
     },
   ];
 }
-export async function loader({request}) {
+export async function loader({ request }) {
   const db = await connectDb();
   const url = new URL(request.url);
+
+  // categories
   const category = url.searchParams.get("category");
   var searchParams = {};
- if(category != null && category != '')
- {
-   searchParams.language = category;
- }
-  const snippets = await db.models.CodeSnippet.find(searchParams);
- 
+  if (category != null && category != '') {
+    searchParams.language = category;
+  }
+
+  //  search
+  const searchQuery = url.searchParams.get("searchQuery");
+  if (searchQuery != null && searchQuery != '') {
+    searchParams.title = { $regex: searchQuery };
+
+  }
+
+
+  // filter
+
+  const filter = url.searchParams.get("filter_selector");
+  let filterParams = {};
+
+  if (filter != null && filter != '') {
+    if (filter == "title_az") {
+      //  sort title a-z  
+      filterParams = {title: 1}; 
+    }
+    if (filter == "title_za") {
+      //  sort title a-z  
+      filterParams = {title: -1}; 
+    }
+
+    if (filter == "last_updated") {
+      //  sort by updated
+      // searchParams.sort({date: 1});
+      filterParams = {date: -1};
+
+    }
+    if (filter == "fav") {
+      //  view favourite
+      searchParams.favourite = true; 
+
+    }
+
+  }
+
+
+  const snippets = await db.models.CodeSnippet.find(searchParams).sort(filterParams);
   return snippets;
+
+
 
 }
 

@@ -15,13 +15,7 @@ export default function Index() {
 
 
   const snippets = useLoaderData();
-
-  function listItemActive(e) {
-    var active_item = document.getElementByclassName("list-item");
-    active_item.classList.add("active-list-item");
-    console.log("i work");
-  }
-
+ 
 
   return (
       <div id='content-section'>
