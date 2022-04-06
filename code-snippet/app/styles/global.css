@@ -55,10 +55,10 @@ main {
     outline: none;
     padding: 10px 20px; 
     box-shadow: 1px 1px 3px #000; 
-    background-color: #6bcecd;
+    background-color: #1a605f; 
     margin-right: 20px;
     border-radius: 5px;
-    color: #212121; 
+    color: #fff;
     font-weight: 500;
 
 
@@ -371,9 +371,9 @@ main {
 
     font-weight: 500;
     box-shadow: 1px 1px 3px #000; 
-    background-color: #6bcecd; 
+    background-color: #1a605f; 
     border-radius: 5px;
-    color: #212121;
+    color: #fff;
 
 
 
@@ -384,6 +384,14 @@ main {
     box-shadow: 1px 1px 5px #000; 
     cursor: pointer; 
 
+}
+
+#fav_icon { 
+    background-color: #464646; 
+}
+
+.favToggle {
+    background-color: #1e8e8c !important;  
 }
 
  

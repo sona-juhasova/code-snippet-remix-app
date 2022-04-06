@@ -26,7 +26,7 @@ export default function SnippetList(props) {
                     <form method="GET">
 
                         <select id="filter_selector" name="filter_selector" >
-                            <option value="" disabled selected>Filter</option>
+                            <option value="" disabled selected>Sort</option>
                             <option value="title_az" name="title_az">by title A-Z</option>
                             <option value="title_za" name="title_za">by title Z-A</option>
                             <option value="last_updated" name="last_updated">by last updated</option>
