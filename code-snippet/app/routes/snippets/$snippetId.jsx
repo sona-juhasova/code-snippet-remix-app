@@ -1,4 +1,4 @@
-import { Link,Form, useLoaderData, redirect } from 'remix';
+import { Link, Form, useLoaderData, redirect, post } from 'remix';
 import connectDb from '~/db/connectDb.server';
 
 export async function loader({ params }) {
@@ -13,11 +13,22 @@ export async function action({ request }) {
     const body = await request.formData();
     var id = body.get("_id");
 
- 
-    const db = await connectDb();
-    db.models.CodeSnippet.findByIdAndDelete(id).exec();
-    return redirect('/');
-    
+    if ($_POST['action'] == 'delete') {
+        const db = await connectDb();
+        db.models.CodeSnippet.findByIdAndDelete(id).exec();
+        return redirect('/');
+
+    } else if ($_POST['action'] == 'fav_update') {
+        var model = {
+            favourite: true,
+
+        };
+        const db = await connectDb();
+        db.models.CodeSnippet.findByIdAndUpdate(id, model).exec();
+        return redirect('/snippets/' + id);
+    }
+
+
 }
 
 export default function Index() {
@@ -59,14 +70,18 @@ export default function Index() {
                     </div>
 
                     <div className="buttons-wrapper">
-                        <button>Add to favourites</button>
+                        <Form method="post">
+                            <input type="hidden" name="_id" defaultValue={snippet._id}></input>
+                            <button type="submit" name="action" value="fav_update">Add to favourites</button>
+                        </Form>
 
-                        <Link to={"/snippets/Update/"+snippet._id}>
-                        <button>Edit</button>
+                        <Link to={"/snippets/Update/" + snippet._id}>
+                            <button>Edit</button>
                         </Link>
-                    <Form method="post">
-                        <input type="hidden" name="_id" defaultValue={snippet._id}></input>
-                        <button type="submit">Delete</button>
+
+                        <Form method="post">
+                            <input type="hidden" name="_id" defaultValue={snippet._id}></input>
+                            <button type="submit" name="action" value="delete">Delete</button>
                         </Form>
                     </div>
 
