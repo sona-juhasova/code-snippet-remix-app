@@ -12,10 +12,21 @@ const snippetsSchema = new Schema({
 
 });
 
+const userSchema = new Schema({
+  username: String, 
+  password: String 
+
+});
+
 export const models = [
   {
     name: "CodeSnippet",
     schema: snippetsSchema,
     collection: "code-snippets",
   },
+  {
+    name: "User",
+    schema: userSchema,
+    collection: "users",
+  }
 ];
